@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Addr</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.20/fabric.min.js' %>
+<link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm my-navbar-style">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse col-xs-6" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <%= link_to 'Home', root_path, class: 'my-nav-link nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Generate Ad', coupons_path, class: 'my-nav-link nav-link' %>
+          </li>
+        </ul>
+        <div class="collapse navbar-collapse col-xs-6 d-flex justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to 'My Profile', user_path(current_user), class: 'my-nav-link nav-link a-nav' %>
+              </li>
+              <li>
+                <%= link_to 'Sign Out', session_path, class: 'my-nav-link nav-link a-nav', method: :delete %>
+              </li>
+            <% else %>
+              <li class="login-nav nav-item" >
+                <%= link_to 'Login', new_session_path, {'class' => "my-nav-link nav-link a-nav", 'data-toggle' =>  "modal", 'data-target' => "#exampleModalLong"} %>
+              </li>
+            <% end %>
+
+<!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title text-dark text-center" id="exampleModalLongTitle">Please login below</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <%= form_for :session, url: session_path do |f| %>
+                      <div>
+                        <%= f.email_field :email, placeholder: 'Email', class: 'my-3 form-control' %>
+                      </div>
+                      <div>
+                        <%= f.password_field :password, placeholder: 'Password', class: 'my-3 form-control' %>
+                      </div>
+                      <div>
+                      <%= f.submit 'Log In', class: "btn mybutton my-2" %>
+                      </div>
+                      <div>
+                        <button class="loginBtn loginBtn--twitter"><%= link_to "Sign in with Twitter", sign_in_with_twitter_path, class: 'text-light' %></button>
+                      </div>
+
+                      <div>
+                        <button class="loginBtn loginBtn--facebook"><%= link_to "Sign in with Facebook", sign_in_with_facebook_path, class: 'text-light' %></button>
+                      </div>
+                      <div>
+                        <button class="loginBtn loginBtn--google"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class: 'text-light' %></button>
+                      <div>
+                      <div>
+                        <span class='text-center modal-span'>————————— or —————————</span>
+                      </div>
+                      <div>
+                        <%= link_to 'Sign Up', new_user_path, class: "btn btn-secondary my-2"  %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+    <footer>
+      <div id='footer-first-line' class='d-flex justify-content-center align-items-end text-light'>
+        <a href='#' class='pr-4 text-light'>About</a>
+        <a href='#' class='pr-4 text-light'>Terms and Conditions</a>
+        <a href='#' class='pr-4 text-light'>Privacy</a>
+        <a href='#' class='pr-4 text-light'>API</a>
+      </div>
+      <div id='footer-second-line' class='d-flex align-items-center justify-content-center'>
+        <img src="images/Twitter.png" class='footer-img' />
+        <img src="images/Facebook.png" class='footer-img' />
+        <img src="images/Pinterest.png" class='footer-img' />
+        <img src="images/Instagram.png" class='footer-img' />
+        <img src="images/Google.png" class='footer-img'/>
+      </div>
+      <div class='text-center' id='footer-third-line'>
+        <span class='text-light'>Addr © 2017</span>
+      </div>
+    </footer>
+  </body>
+</html>

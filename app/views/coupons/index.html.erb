@@ -1,0 +1,131 @@
+<link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Russo+One" rel="stylesheet">
+
+<div class="container-fluid wrapper">
+  <div class="row justify-content-center m-3">
+    <div class="col-xs-12">
+      <div id="canvas-wrapper" style="display: block; ">
+        <canvas id="main-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-around">
+    <div class="col-xs-4 text-center ad-box">
+      <h3>Ad Dimensions</h3>
+      <form>
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="canvas-width" class="col-4 col-form-label text-left">Ad Width: </label>
+          <div class='col-8'>
+            <input class="form-control" id="canvas-width" type="number" value="800" placeholder="800px">
+          </div>
+        </div>
+
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="canvas-height" class="col-4 col-form-label text-left">Ad Height: </label>
+          <div class='col-8'>
+            <input id="canvas-height" class='form-control' type="number" value="400">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-xs-4 text-center ad-box">
+      <h3>Text Attributes</h3>
+      <form>
+        <!-- <div id="font-notification" style="display: none; color: red;">Text area is over 20% of image area</div> -->
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="font-type" class="col-4 col-form-label text-left">Font Style:</label>
+          <div class='col-8'>
+            <select id="font-type" class="form-control">
+              <option value="Arial" style="font-family: 'Arial', sans-serif">Arial</option>
+              <!-- <option value="Lora" style="font-family: Verdana, sans-serif">Lora</option>
+              <option value="Poppins" style="font-family: Poppins, sans-serif">Poppins</option>
+              <option value="Raleway" style="font-family: Raleway, sans-serif">Raleway</option>
+              <option value="Roboto" style="font-family: Roboto, sans-serif">Roboto</option> -->
+              <option value="Bookman" style="font-family: 'Bookman', monospace">Bookman</option>
+              <option value="Comic Sans MS" style="font-family: 'Comic Sans MS', sans-serif">Comic Sans MS</option>
+              <option value="Courier New" style="font-family: 'Courier New', monospace">Courier New</option>
+              <option value="Garamond" style="font-family: 'Garamond', monospace">Garamond</option>
+              <option value="Georgia" style="font-family: 'Georgia', monospace">Georgia</option>
+              <option value="Helvetica" style="font-family: 'Helvetica', monospace">Helvetica</option>
+              <option value="Impact" style="font-family: 'Impact', sans-serif">Impact</option>
+              <option value="Palatino" style="font-family: 'Palatino', sans-serif">Palatino</option>
+              <option value="Times" style="font-family: 'Times', sans-serif">Times</option>
+              <option value="Verdana" style="font-family: 'Verdana', sans-serif">Verdana</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="font-size" class="col-4 col-form-label text-left">Font Size:</label>
+          <div class='col-8'>
+            <input class="form-control" id="font-size" type="number" value="20">
+          </div>
+        </div>
+
+        <div class='m-2 form-group row justify-content-between align-items-center'>
+          <label for="font-color" class="col-8 col-form-label text-left">Font Color:</label>
+          <div class='col-4'>
+            <input class="color-input" id="font-color" type="color" value="#000000">
+          </div>
+        </div>
+
+        <div class='m-2 form-group row justify-content-between align-items-center'>
+          <label for="font-background-color" class="col-8 col-form-label text-left">Text Background Color:</label>
+          <div class='col-4'>
+            <input class="color-input" id="text-background-color" type="color" value="#FFFFFF">
+          </div>
+        </div>
+
+        <div class='m-2 form-group row justify-content-between align-items-center'>
+          <label for="font-background-color" class="col-2 col-form-label text-left">Opacity:</label>
+          <div id="slidecontainer" class='col-9'>
+            <input type="range" min="0" max="1" step="0.01" value="1" class="slider" id="text-background-opacity">
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-xs-4 text-center ad-box">
+      <h3>Background Image</h3>
+      <form>
+
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="image-upload" class="col-3 col-form-label text-left">Upload Image:</label>
+          <div class='col-7'>
+            <input type="file" class="form-control"  id="image-upload" />
+          </div>
+          <div class='col-2'>
+          </div>
+        </div>
+
+        <div class='m-2 form-group row justify-content-between'>
+          <label for="image-url" class="col-3 col-form-label text-left">Image URL:</label>
+          <div class='col-7'>
+            <input type="url" class="form-control"  id="image-url">
+          </div>
+          <div class='col-2'>
+            <button type="button" id="image-get" class='btn img-get-btn'>APPLY</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center m-3">
+    <div class='col-xs-12'>
+      <!-- 
+      <%= form_for @coupon do |form| %>
+      <%= form.text_field :title, label: 'Name your ad' %>
+      <%= form.submit class: 'btn btn-primary', id: 'save-image-button' %> -->
+
+      <a href="#" class="btn btn-success" id="save-image-button" >SAVE AND DOWNLOAD</a>
+      <% end %>
+    </div>
+  </div>
+</div>

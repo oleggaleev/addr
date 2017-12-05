@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require rails_bootstrap_forms
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+
+ *
+{
+    margin: 0;
+
+}
+
+
+html, body
+{
+height: 100%;
+}
+
+
+
+.my-navbar-style {
+  background: linear-gradient(black, #011012);
+  color: white;
+}
+
+.my-nav-link {
+  color: white;
+  font-family: 'Changa', sans-serif;
+  font-size: 20px;
+}
+
+.login-nav {
+  float: right;
+}
+
+footer {
+  position:relative;
+  bottom:0;
+  width:100%;
+
+}
+
+#footer-first-line {
+  width: 100%;
+  height: 30px;
+  background: #39475e;
+}
+
+#footer-second-line {
+  width: 100%;
+  height: 150px;
+  background: #39475e;
+}
+
+#footer-third-line {
+  width: 100%;
+  background: black;
+}
+
+.footer-img {
+  width: 4rem;
+}
+
+.mybutton {
+  height: 80;
+  width: 280;
+  background-color: #105670;
+  color: beige;
+  font-family: 'Changa', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.mybutton:hover {
+  background-color: #00CCFF;
+}
+
+a:hover {
+  background-color: #00CCFF;
+  color: white;
+  text-decoration: none;
+}
+
+.modal-span {
+  color: #CBD2D6;
+}
+
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+/* Twitter */
+.loginBtn--twitter {
+  background-color: #53ADE9;
+  background-image: linear-gradient(#53ADE9, #53ADE9);
+  text-shadow: 0 -1px 0 #53ADE9;
+}
+.loginBtn--twitter:before {
+  border-right: #3a90c9 1px solid;
+  background: url('http://www.slate.com/content/dam/slate/blogs/browbeat/2011/10/07/twitter.gif.CROP.promo-mediumlarge.gif') 6px 6px no-repeat;
+}
+.loginBtn--twitter:hover,
+.loginBtn--twitter:focus {
+  background-color: #70bcef;
+  background-image: linear-gradient(#70bcef, #70bcef);
+}
+
+
+/* Google */
+.loginBtn--google {
+  background: #DD4B39;
+}
+.loginBtn--google:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+  background: #E74B37;
+}
